@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
     const [theme, setTheme] = useState('light');
@@ -25,18 +26,20 @@ const Nav = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </div>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                <li><a>Home</a></li>
-                                <li><a>Blogs</a></li>
-                                <li><a>Bookmarks</a></li>
+                                <NavLink to={'/'} className={({isActive})=> isActive? 'text-primary font-bold':'font-bold'}><a>Home</a></NavLink>
+                                <NavLink to={'/blogs'} className={({isActive})=> isActive? 'text-primary font-bold':'font-bold'}><a>Blogs</a></NavLink>
+                                <NavLink to={'/bookmarks'} className={({isActive})=> isActive? 'text-primary font-bold':'font-bold'}><a>Bookmarks</a></NavLink>
                             </ul>
                         </div>
+                        <Link to={'/'}>
                         <a className="btn btn-ghost font-bold normal-case gap-0 text-secondary text-2xl">Byte<span className="text-primary">Blaze</span></a>
+                        </Link>
                     </div>
                     <div className="navbar-end hidden lg:flex">
-                        <ul className="menu text-lg font-bold menu-horizontal px-1">
-                            <li><a>Home</a></li>
-                            <li className="text-primary"><a>Blogs</a></li>
-                            <li><a>Bookmarks</a></li>
+                        <ul className="menu gap-5 mr-4 text-lg menu-horizontal px-1">
+                            <NavLink to={'/'} className={({isActive})=> isActive? 'text-primary font-bold':'font-bold'}><a>Home</a></NavLink>
+                            <NavLink to={'/blogs'} className={({isActive})=> isActive? 'text-primary font-bold':'font-bold'}><a>Blogs</a></NavLink>
+                            <NavLink to={'/bookmarks'} className={({isActive})=> isActive? 'text-primary font-bold':'font-bold'}><a>Bookmarks</a></NavLink>
                         </ul>
                     </div>
                     <label className="cursor-pointer grid place-items-center">
