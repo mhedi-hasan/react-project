@@ -1,9 +1,9 @@
-import Nav from "../components/Nav";
+import Hero from "../components/Hero";
 
 const Home = () => {
     return (
-        <div>
-            <h2>home section</h2>
+        <div className="min-h-[calc(100vh-224px)] flex items-center justify-center">
+            <Hero></Hero>
         </div>
     );
 };
